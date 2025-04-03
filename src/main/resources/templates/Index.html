@@ -1,0 +1,336 @@
+<html><head>
+    <meta http-equiv="refresh" content="1780">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Command Center: Login Page</title>
+
+    <style type="text/css">
+        /* <![CDATA[ */
+        body, html {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+
+            vertical-align: middle;
+            background-color: #094A93;
+            color: #2c5b91;
+        }
+        #container {
+            display: block;
+            width: 800px;
+            height: 520px;
+            margin: 60px auto;
+            background: url(https://commandcenter-ngp.sabre.com//images/loginsplash.jpg) top left no-repeat;
+        }
+        #content {
+            display: block;
+            width: 302px;
+            margin: 0 auto;
+            height: 300px;
+            padding-top: 110px;
+            padding-bottom: 50px;
+        }
+        fieldset {
+            border: 0px;
+        }
+        label {
+            display: block;
+            width: 105px;
+            text-align: right;
+            font-weight: bold;
+        }
+        input {
+            width: 90px;
+        }
+        .error {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+            font-weight: bold;
+            color: #FF0000;
+            text-align: center;
+        }
+        #login-button {
+            display: block;
+            margin: 0 0 0 170px;
+            height: 27px;
+            padding: 0;
+
+            color: #fff;
+            font-weight: bold;
+            font-size: 11px;
+            cursor: pointer;
+            cursor: hand;
+        }
+        #productName {
+            margin-top: 25px;
+        }
+        #productName img {
+            display: block;
+            margin: 0 auto;
+        }
+        #copyright {
+            font-size: 9px;
+            text-align: center;
+            color: #244f80;
+            display: block;
+            width: 240px;
+            margin: 0 auto;
+        }
+        #login-button {
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            width: 65px;
+            height: 27px;
+            border: double 2px transparent;
+            border-radius: 80px;
+            background-color: #115198;
+            background-image: linear-gradient(#99b8d4, #165a9b,#115198), linear-gradient( #eff4f8,#4e84b3,#2c6ea8);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 0px 0px 0px 1px #094a93;
+            margin-left: 130px;
+            cursor: pointer;
+            cursor: hand;
+            margin-top: 20px;
+        }
+        .box {
+            width: 80px;
+        }
+        .button {
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.3);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup {
+            margin: 70px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+
+        .popup h2 {
+            margin-top: 0;
+            color: #333;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        .popup .close:hover {
+            color: #06D85F;
+        }
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 700px){
+            .box{
+                width: 70%;
+            }
+            .popup{
+                width: 70%;
+            }
+        }
+        /* ]]> */
+    </style>
+    <script language="JavaScript" type="text/javascript">
+        /* <![CDATA[ */
+
+        function doCapitalize(control){
+            control.value = control.value.toUpperCase();
+        }
+        function keyEnterEvent(event){
+            if( event.keyCode == 13) {
+                submitForm();
+            }
+        }
+        function selectText(textBox) {
+            textBox.select();
+        }
+        function pngfix(){
+            var arVersion = navigator.appVersion.split("MSIE");
+            var version = parseFloat(arVersion[1]);
+
+            if ( (version >= 5.5) && (document.body.filters) ) {
+                for( var i=0; i<document.images.length; i++ ) {
+                    var img = document.images[i];
+                    var imgName = img.src.toUpperCase();
+                    if ( imgName.substring(imgName.length - 3, imgName.length) == "PNG" ) {
+                        var imgID = (img.id) ? "id='" + img.id + "' " : "";
+                        var imgClass = (img.className) ? "class='" + img.className + "' " : "";
+                        var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' ";
+                        var imgStyle = "display:inline-block;" + img.style.cssText ;
+                        if (img.align == "left") {
+                            imgStyle = "float:left;" + imgStyle;
+                        }
+                        if (img.align == "right") {
+                            imgStyle = "float:right;" + imgStyle;
+                        }
+                        if (img.parentElement.href) {
+                            imgStyle = "cursor:hand;" + imgStyle;
+                        }
+                        var strNewHTML = "<span " + imgID + imgClass + imgTitle;
+                        strNewHTML += " style=\"width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";";
+                        strNewHTML += "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader";
+                        strNewHTML += "(src='" + img.src + "', sizingMethod='scale');\"></span>";
+                        img.outerHTML = strNewHTML;
+                        i = i-1;
+                    }
+                }
+            }
+        }
+        function submitForm() {
+            document.Login.submit();
+        }
+
+        var isNN = (navigator.appName.indexOf("Netscape")!=-1);
+        function advance(currentField,nextField,sizeCF,eventDone)
+        {
+            var keyCode = (isNN) ? eventDone.which : eventDone.keyCode;
+            var filter = (isNN) ? [0,8,9] : [0,8,9,16,17,18,37,38,39,40,46];
+
+            if ((currentField.value.length == sizeCF) && !containsElement(filter,keyCode))
+            {
+                nextField.focus();
+            }
+        }
+
+        function containsElement(arr, elementFound) {
+            return arr.includes(elementFound);
+        }
+
+        function removeLeadingZero()   //for Leading Zeros remove
+        {
+            var strUserName = document.Login.userId.value;
+            document.Login.userId.value = strUserName.replace(/^0+/, "");
+        }
+
+        /* ]]> */
+    </script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Atlassian Sans';
+            font-style: normal;
+            font-weight: 400 653;
+            font-display: swap;
+            src:
+                local('AtlassianSans'),
+                local('Atlassian Sans Text'),
+                url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/AtlassianSans-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+                U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }</style></head>
+<body onkeypress="keyEnterEvent(event)" onload="pngfix(); document.forms['Login'].elements['userId'].focus();">
+
+<form id="container" name="Login" method="post" autocomplete="off" action="/login"><input type="hidden" name="_csrf" value="0vYCtIB0YlkZT7JGWH6hE9TRYUQ64aWu1JgRmDr2R_EUxslV4c4y1bJGVGg0fIt1PFOVK7blTCYK0J2Dsf1zr1iVI8cl8apk">
+    <input type="hidden" value="https://commandcenter-ngp.sabre.com/sabreg/login?environment=PROD" name="goto" id="goto">
+    <input type="hidden" value="commandcenter" name="siteId" id="siteId">
+    <input type="hidden" value="false" name="mfaEnroll" id="mfaEnroll">
+    <div id="content">
+
+
+
+        <fieldset>
+            <table>
+                <tbody><tr>
+                    <td><label for="userId">Username:</label></td>
+                    <td>
+                        <input type="text" id="userId" name="userId" autocomplete="off" tabindex="1" size="8" maxlength="6" value="" onkeyup="doCapitalize(this);advance(this,document.Login.password,6,event);" onblur="removeLeadingZero();" required="" autofocus="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td>
+                        <input type="password" id="password" name="password" autocomplete="off" tabindex="2" size="8" maxlength="8" value="" onkeyup="advance(this,document.Login.domain,8,event);" required="">
+                    </td>
+                    <td>
+                        <div class="box">
+                            <a class="button" href="#passwordHelp"><font size="1" color="blue">Password Help</font></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="domain">Partition:</label></td>
+                    <td>
+                        <input type="domain" id="domain" name="domain" autocomplete="off" tabindex="3"  value="" onkeyup="doCapitalize(this);advance(this,document.Login.group,2,event);" required="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="group">Suffix:</label></td>
+                    <td>
+                        <input type="group" id="group" name="group" autocomplete="off" tabindex="4" value="" onkeyup="doCapitalize(this);" required="">
+                    </td>
+                </tr>
+                </tbody></table>
+            <table border="0" cellspacing="0" cellpadding="0" onclick="submitForm();">
+                <tbody><tr>
+                    <td>
+                        <input id="login-button" type="button" tabindex="5" value="Login" onclick="javascript:submitForm()">
+                    </td>
+                </tr>
+                </tbody></table>
+        </fieldset>
+        <div id="productName">
+            <img src="https://commandcenter-ngp.sabre.com//images/productName.gif" alt="Command Center">
+        </div>
+    </div>
+    <div id="copyright">
+        Copyright 2018 - 2025, Sabre Inc. All rights reserved. <br>
+        Authorized users only - <a class="button" href="#securityNotice"><font size="1" color="blue">Security Notice</font></a>
+    </div>
+    <div id="passwordHelp" class="overlay">
+        <div class="popup">
+            <h2>Command Center Password Help:</h2>
+            <a class="close" href="#">×</a>
+            <div class="content">
+                Command Center passwords are based on Native Sabre Passwords.  Please note the following:<br><br>
+                <li type="circle">Passwords can only be set using Native Sabre or by contacting the<br> &nbsp;&nbsp;&nbsp; Sabre Create Agent at your airline</li>
+                <li type="circle">Passwords are 6 to 8 <b> alphanumeric characters </b> and must contain at<br>&nbsp;&nbsp;&nbsp;&nbsp;least one instance of a number</li>
+                <li type="circle">If an incorrect password is entered three times, the password will be<br>&nbsp;&nbsp;&nbsp;&nbsp;locked out - this will require a call to the Sabre Create Agent at your<br>&nbsp;&nbsp;&nbsp;&nbsp;airline </li>
+            </div>
+        </div>
+    </div>
+    <div id="securityNotice" class="overlay">
+        <div class="popup">
+            <h2>Security Notice</h2>
+            <a class="close" href="#">×</a>
+            <div class="content">
+                Only authorized users may access this site. By proceeding with login, you agree that you understand and consent to company policies. We monitor activity and will provide evidence of unauthorized access to law enforcement agencies.
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb"><div id="shadow-host-companion"></div></div></body></html>

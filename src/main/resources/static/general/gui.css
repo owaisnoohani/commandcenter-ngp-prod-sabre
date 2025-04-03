@@ -1,0 +1,123 @@
+.loginscreenBackground {
+	background-color: #094A93;
+}
+#login_container { /* 800x600 outer container - centered */
+	position: relative; top: 20px; background: url(../images/loginsplash.jpg) top left no-repeat;
+	width: 800px; height: 600px; margin-left: auto; margin-right: auto; font-family:Arial; color:#2c5b91;
+	font-weight:bold; font-size:11px;
+}
+#login_innercontainer { /* inner container - includes login form, product name and version */
+	position: relative; top: 80px; left: 247px; width: 302px;
+
+}
+
+#login_form label {
+	display: block; width: 280px; text-align: right;
+}
+#login_form .textbox {
+	position: relative; display: inline; top: -20px; left: 115px; display: block; width:130px;
+}
+
+#login_form fieldset {
+	border: 12px;
+}
+.loginlabeluserId {
+	display: block; width: 240px; text-align: center;
+}
+
+.loginlabelpwd {
+	display: block; width: 320px; text-align: center;
+}
+
+.loginlabelpart {
+	display: block; width: 217px; text-align: center;
+}
+
+.loginlabelenv {
+	display: block; width: 211px; text-align: center;
+}
+
+.loginlabelradio {
+	display: block; padding-left:123px;
+}
+
+#login_button {
+	position: relative;	left: 170px; background: url(../images/login-right.png) top right scroll no-repeat;
+	padding: 0px; padding-right: 11px; height: 30px; display: inline;
+	text-align: center;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	width: 65px;
+	height: 27px;
+	border: double 2px transparent;
+	border-radius: 80px;
+	background-image: linear-gradient(#99b8d4, #165a9b,#115198), linear-gradient( #eff4f8,#4e84b3,#2c6ea8);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	outline: 1px solid #22629f;
+	margin-left: 110px;
+	cursor: pointer;
+	cursor: hand;
+}
+#login_button input.button {
+	display: inline; background: url(../images/login-left.png) top left repeat-x; height: 27px; font-family: Arial, Helvetica, sans-serif;
+	margin: 0px; color: #ffffff; font-weight: bold; font-size: 11px; cursor: pointer; cursor: hand; border: 0px;
+	padding: 2px 1px 4px 14px;
+}
+
+.loginButton {
+	text-align: center;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	width: 65px;
+	height: 27px;
+	border: double 2px transparent;
+	border-radius: 80px;
+	background-color: #115198;
+	background-image: linear-gradient(#99b8d4, #165a9b,#115198), linear-gradient( #eff4f8,#4e84b3,#2c6ea8);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	box-shadow: 0px 0px 0px 1px #094a93;
+	margin-left: 110px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#login_innercontainer #productName {
+	text-align: center; position: relative; top: 15px;
+}
+#login_innercontainer #version {
+	position: relative;	top: 25px; font-size:12px; color:#7EA6D2; text-align:center; font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+#login_container #copyright {
+	position: relative;	text-align: center;	top: 220px;	left: 275px; width: 240px; font-size:9px;
+	color:#244f80; font-family: Arial, Helvetica, sans-serif;
+}
+
+#copyright a{
+font-family: Arial, Helvetica, sans-serif;
+color:#244f80;
+}
+
+
+.beforeErrMsg {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	color:#094A93;
+	text-align:left
+}
+
+td.branding {
+       background-image : url(../images/banner_commandCenter.gif);
+       background-repeat: no-repeat;
+       width            : 992px;
+       height           : 51px;
+       background-position  : top left;
+       vertical-align: bottom;
+}
