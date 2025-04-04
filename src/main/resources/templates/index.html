@@ -1,4 +1,4 @@
-<html><head>
+<html xmlns:th="http://www.w3.org/1999/xhtml"><head>
     <meta http-equiv="refresh" content="1780">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -252,8 +252,11 @@
                 U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }</style></head>
 <body onkeypress="keyEnterEvent(event)" onload="pngfix(); document.forms['Login'].elements['userId'].focus();">
-
+<div th:if="${errorMessage}" style="color: red; font-weight: bold;">
+    <p th:text="${errorMessage}"></p>
+</div>
 <form id="container" name="Login" method="post" autocomplete="off" action="/login"><input type="hidden" name="_csrf" value="0vYCtIB0YlkZT7JGWH6hE9TRYUQ64aWu1JgRmDr2R_EUxslV4c4y1bJGVGg0fIt1PFOVK7blTCYK0J2Dsf1zr1iVI8cl8apk">
+
     <input type="hidden" value="https://commandcenter-ngp.sabre.com/sabreg/login?environment=PROD" name="goto" id="goto">
     <input type="hidden" value="commandcenter" name="siteId" id="siteId">
     <input type="hidden" value="false" name="mfaEnroll" id="mfaEnroll">
